@@ -16,6 +16,7 @@ import { AuthService } from './services/auth/auth.service';
 import { UsingPipeComponent } from './using-pipe/using-pipe.component';
 import { UrlPipe } from './pipes/url/url.pipe';
 import { OverrideInjectsComponent } from './override-injects/override-injects.component';
+import { InputOutputComponent } from './input-output/input-output.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { OverrideInjectsComponent } from './override-injects/override-injects.co
     LoginComponent,
     UrlPipe,
     UsingPipeComponent,
-    OverrideInjectsComponent
+    OverrideInjectsComponent,
+    InputOutputComponent
   ],
   imports: [
     BrowserModule,
