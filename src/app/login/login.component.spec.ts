@@ -1,4 +1,6 @@
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { AuthService } from '../services/auth/auth.service';
 import { LoginComponent } from './login.component';
 
@@ -12,6 +14,7 @@ fdescribe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let service:AuthService;
+  let el:DebugElement;
 
 
   beforeEach(() => {
@@ -25,6 +28,7 @@ fdescribe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     service = TestBed.get(AuthService)
+    el = fixture.debugElement.query(By.css('a'));
 
   });
 
@@ -48,6 +52,24 @@ fdescribe('LoginComponent', () => {
     spyOn(service,'isAuthenticated').and.returnValue(true)
     expect(component.needsLogin()).toBeFalsy();
     expect(service.isAuthenticated).toHaveBeenCalled()
+
+  })
+
+  it('login button hidden when user is authenticated',() => {
+
+    expect(el.nativeElement.textContent.trim()).toBe('');
+    fixture.detectChanges();
+    expect(el.nativeElement.textContent.trim()).toBe('Login');
+    spyOn(service,'isAuthenticated').and.returnValue(true);
+    fixture.detectChanges();
+    expect(el.nativeElement.textContent.trim()).toBe('Logout');
+
+  })
+
+  it('Login botton hiddem when the user is authenticated',()=> {
+    spyOn(service,'isAuthenticated').and.returnValue(true);
+    fixture.detectChanges();
+    expect(el.nativeElement.textContent.trim()).toContain('Logout'); 
 
   })
 
