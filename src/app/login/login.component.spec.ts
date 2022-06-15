@@ -1,3 +1,4 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AuthService } from '../services/auth/auth.service';
 import { LoginComponent } from './login.component';
 
@@ -6,23 +7,25 @@ import { LoginComponent } from './login.component';
  * to user a mock of real service
  * 
  */
-class MockAuthService extends AuthService{
 
-  authenticated = false;
-
-  isAuthenticated():boolean{ 
-    return this.authenticated;
-  }
-}
-
-describe('LoginComponent', () => {
+fdescribe('LoginComponent', () => {
   let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
   let service:AuthService;
 
 
   beforeEach(() => {
-    service = new AuthService();
-    component =  new LoginComponent(service);
+   
+    TestBed.configureTestingModule({
+      declarations: [LoginComponent],
+      providers:[AuthService]
+    })
+
+    // create a instance of component with all injections
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
+    service = TestBed.get(AuthService)
+
   });
 
   afterEach(() => {
