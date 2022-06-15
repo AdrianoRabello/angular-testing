@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed, async, fakeAsync, tick } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed, async, fakeAsync, tick, inject } from '@angular/core/testing';
+import { By, disableDebugTools } from '@angular/platform-browser';
+import { MockService } from 'ng-mocks';
 import { AuthService } from '../services/auth/auth.service';
 import { LoginComponent } from './login.component';
 
@@ -10,18 +11,28 @@ import { LoginComponent } from './login.component';
  * 
  */
 
-    /** We can test asynchronous functions using 
+    /** @Tutorial */
+    /** @tutorial We can test asynchronous functions using 
      * 
      * The Jamie done functon and spy callbacks
      * Angular async and whenStable functions
      * Angular fakeAsync and tick functions
      * 
-     * **/
-fdescribe('LoginComponent', () => {
+     * */
+
+class MockAuthService extends AuthService{
+
+  isAuthenticated():any{
+    return 'Mock';
+  }
+}
+
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let service:AuthService;
   let el:DebugElement;
+  let testbadService:AuthService;
 
 
   beforeEach(() => {
@@ -31,11 +42,13 @@ fdescribe('LoginComponent', () => {
       providers:[AuthService]
     })
 
+
     // create a instance of component with all injections
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     service = TestBed.get(AuthService)
     el = fixture.debugElement.query(By.css('a'));
+    testbadService = TestBed.get(AuthService)
 
   });
 
@@ -85,5 +98,9 @@ fdescribe('LoginComponent', () => {
     expect(el.nativeElement.textContent.trim()).toBe('Logout')
 
   }));
+
+
+
+
 
 });
