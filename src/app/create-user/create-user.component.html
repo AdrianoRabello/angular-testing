@@ -1,0 +1,29 @@
+<div class="m-5">
+
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="fill" >
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name"  name="name">
+        </mat-form-field>
+
+        <div>
+            <mat-error *ngIf="userForm.controls.name.touched && userForm.controls.name.invalid">
+                <span *ngIf="userForm.controls.name.errors.required">This field is mandatory.</span>
+            </mat-error>
+        </div>
+
+    
+        <mat-form-field appearance="fill" >
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="email"  name="email">
+        </mat-form-field>
+
+
+        <button mat-raised-button color="primary" (click)="addUser()" class="btn">Salvar</button>
+
+    </form>
+
+    <div class="list">
+        <p *ngFor="let teste of users">Name: {{ teste.name }} email: {{ teste.email}}</p>
+    </div>
+</div>
