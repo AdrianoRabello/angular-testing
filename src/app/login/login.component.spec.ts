@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AuthService } from '../services/auth/auth.service';
 import { LoginComponent } from './login.component';
@@ -10,6 +10,13 @@ import { LoginComponent } from './login.component';
  * 
  */
 
+    /** We can test asynchronous functions using 
+     * 
+     * The Jamie done functon and spy callbacks
+     * Angular async and whenStable functions
+     * Angular fakeAsync and tick functions
+     * 
+     * **/
 fdescribe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
@@ -41,37 +48,42 @@ fdescribe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('The user needs to login',()=> {
-    spyOn(service,'isAuthenticated').and.returnValue(false)
-    expect(component.needsLogin()).toBeTruthy();
-    expect(service.isAuthenticated).toHaveBeenCalled()
-  })
 
-
-  it('should return false when user is authenticated',()=> {
-    spyOn(service,'isAuthenticated').and.returnValue(true)
-    expect(component.needsLogin()).toBeFalsy();
-    expect(service.isAuthenticated).toHaveBeenCalled()
-
-  })
-
-  it('login button hidden when user is authenticated',() => {
-
-    expect(el.nativeElement.textContent.trim()).toBe('');
+  it('Button label with done ',(done)=> {
     fixture.detectChanges();
     expect(el.nativeElement.textContent.trim()).toBe('Login');
-    spyOn(service,'isAuthenticated').and.returnValue(true);
-    fixture.detectChanges();
-    expect(el.nativeElement.textContent.trim()).toBe('Logout');
-
+    let spy = spyOn(service,'isAuthenticated').and.returnValue(Promise.resolve(true));
+    component.ngOnInit();
+    spy.calls.mostRecent().returnValue.then(()=> {
+      fixture.detectChanges();
+      expect(el.nativeElement.textContent.trim()).toBe('Logout');
+      done();
+    });
   })
 
-  it('Login botton hiddem when the user is authenticated',()=> {
-    spyOn(service,'isAuthenticated').and.returnValue(true);
+  it('Button label with async ', async()=> {
     fixture.detectChanges();
-    expect(el.nativeElement.textContent.trim()).toContain('Logout'); 
-
+    expect(el.nativeElement.textContent.trim()).toBe('Login');
+    spyOn(service,'isAuthenticated').and.returnValue(Promise.resolve(true));
+    component.ngOnInit();
+    fixture.whenStable().then(()=> {
+      fixture.detectChanges();
+      expect(el.nativeElement.textContent.trim()).toBe('Logout');
+    });
   })
 
+  it('Button label with tick',fakeAsync(()=> {
+    fixture.detectChanges();
+    expect(el.nativeElement.textContent.trim()).toBe('Login');
+    spyOn(service,'isAuthenticated').and.returnValue(Promise.resolve(true));
+    component.ngOnInit();
+
+    /** @tutorial tick() tick function will block to call service async function **/
+
+    tick();
+    fixture.detectChanges();
+    expect(el.nativeElement.textContent.trim()).toBe('Logout')
+
+  }));
 
 });

@@ -8,13 +8,14 @@ import { AuthService } from '../services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  needsLogin: boolean = true;
+
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
-  }
-
-  needsLogin():boolean{
-    return !this.auth.isAuthenticated();
+    this.auth.isAuthenticated().then((authenticated) => {
+      this.needsLogin = !authenticated;
+    });
   }
 
 }
