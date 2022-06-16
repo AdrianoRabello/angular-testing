@@ -1,3 +1,4 @@
+import { FormComponent } from './form/form.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +13,7 @@ export const routes: Routes = [
   {path: 'pipe', component: UsingPipeComponent},
   {path: 'input-output', component: InputOutputComponent},
   {path: 'directives', component: DirectivesComponent},
+  {path: 'form', component: FormComponent},
   {path: '', component: AppComponent}
 ];
 

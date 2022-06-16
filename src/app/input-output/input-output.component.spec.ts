@@ -19,7 +19,7 @@ import { exec } from 'child_process';
 
 
 
-fdescribe('InputOutputComponent', () => {
+describe('InputOutputComponent', () => {
   let component: InputOutputComponent;
   let fixture: ComponentFixture<InputOutputComponent>;
   let submitElment: DebugElement;

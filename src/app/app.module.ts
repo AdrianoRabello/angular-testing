@@ -20,6 +20,7 @@ import { InputOutputComponent } from './input-output/input-output.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HoverFocusDirective } from './directives/hover-focus.directive';
 import { HighlightDirective } from './directives/highlight.directive';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     InputOutputComponent,
     DirectivesComponent,
     HoverFocusDirective,
-    HighlightDirective
+    HighlightDirective,
+    FormComponent
   ],
   imports: [
     BrowserModule,
