@@ -17,10 +17,10 @@ export class InputOutputComponent implements OnInit {
   }
 
   login(email:string, password:string){
-    console.log(`email : ${email} password: ${password}`);
 
     if(email && password){
       console.log(`Emmiting event `);
+      this.enabled = true;
       const user = new User(email,password);
       this.loggedIn.emit(user);
     }

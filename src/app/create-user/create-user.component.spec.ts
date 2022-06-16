@@ -37,8 +37,6 @@ describe('CreateUserComponent', () => {
     fixture = TestBed.createComponent(CreateUserComponent);
     component = fixture.componentInstance;
     userService = TestBed.get(UserService);
-
-
   });
 
 

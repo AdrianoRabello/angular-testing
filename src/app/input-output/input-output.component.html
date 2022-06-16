@@ -12,4 +12,4 @@
     </mat-form-field>
 </div>
 
-<button mat-raised-button color="primary" [disabled]="enabled" (click)="login(email.value,password.value)"class="btn"> Salvar </button>
+<button mat-raised-button color="primary" [disabled]="!enabled" (click)="login(email.value,password.value)"class="btn"> Salvar </button>

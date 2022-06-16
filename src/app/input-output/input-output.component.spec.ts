@@ -7,6 +7,7 @@ import { By} from '@angular/platform-browser';
 import { AngularMaterialModule } from '../angular-material.module';
 
 import { InputOutputComponent } from './input-output.component';
+import { exec } from 'child_process';
 
 
 
@@ -46,20 +47,32 @@ fdescribe('InputOutputComponent', () => {
 
   it('Setting enabled to false diasables the submit button ', ()=> {
     component.enabled = false;
+    emailElement.nativeElement.value = null;
+    passwordElement.nativeElement.value = null;
+    fixture.detectChanges();
     expect( (<HTMLInputElement> submitElment.nativeElement).disabled).toBeTruthy();
   })
 
   it('Entering email and password emits logged event ',() => {
     let user:User;
+    component.loggedIn.subscribe((value) => user = value);
     emailElement.nativeElement.value = 'example@hotmail.com';
     passwordElement.nativeElement.value = '123456';
-
-    component.loggedIn.subscribe((value) => user = value);
     submitElment.triggerEventHandler('click',null);
-
     expect(user.email).toBe('example@hotmail.com');
     expect(user.password).toBe('123456');
 
+  }) 
+
+  it('should enable submit button when email and password are given',() => {
+
+    let user:User;
+    component.loggedIn.subscribe( response => user = response);
+    emailElement.nativeElement.value = 'adrianor.rabello@hotmail.com';
+    passwordElement.nativeElement.value = '123456';
+    fixture.detectChanges();
+    submitElment.triggerEventHandler('click',null);
+    expect(submitElment.nativeElement.disabled).toBeFalsy();
   })
 
 });

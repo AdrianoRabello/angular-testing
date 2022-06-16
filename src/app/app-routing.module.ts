@@ -1,3 +1,4 @@
+import { DirectivesComponent } from './directives/directives.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ export const routes: Routes = [
   {path: 'create-user', component: CreateUserComponent},
   {path: 'pipe', component: UsingPipeComponent},
   {path: 'input-output', component: InputOutputComponent},
+  {path: 'directives', component: DirectivesComponent},
   {path: '', component: AppComponent}
 ];
 

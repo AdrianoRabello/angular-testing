@@ -1,7 +1,7 @@
+import { element } from 'protractor';
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed, async, fakeAsync, tick, inject } from '@angular/core/testing';
-import { By, disableDebugTools } from '@angular/platform-browser';
-import { MockService } from 'ng-mocks';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { AuthService } from '../services/auth/auth.service';
 import { LoginComponent } from './login.component';
 
@@ -57,7 +57,10 @@ describe('LoginComponent', () => {
     service = null;
   })
 
-  it('should create', () => {
+  it('should create with login', () => {
+    component.needsLogin = true;
+    fixture.detectChanges();
+    expect(el.nativeElement.textContent.trim()).toBe('Login')
     expect(component).toBeTruthy();
   });
 
@@ -85,7 +88,7 @@ describe('LoginComponent', () => {
     });
   })
 
-  it('Button label with tick',fakeAsync(()=> {
+  it('Button label with tick here',fakeAsync(()=> {
     fixture.detectChanges();
     expect(el.nativeElement.textContent.trim()).toBe('Login');
     spyOn(service,'isAuthenticated').and.returnValue(Promise.resolve(true));

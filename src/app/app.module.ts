@@ -17,6 +17,9 @@ import { UsingPipeComponent } from './using-pipe/using-pipe.component';
 import { UrlPipe } from './pipes/url/url.pipe';
 import { OverrideInjectsComponent } from './override-injects/override-injects.component';
 import { InputOutputComponent } from './input-output/input-output.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { HoverFocusDirective } from './directives/hover-focus.directive';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { InputOutputComponent } from './input-output/input-output.component';
     UrlPipe,
     UsingPipeComponent,
     OverrideInjectsComponent,
-    InputOutputComponent
+    InputOutputComponent,
+    DirectivesComponent,
+    HoverFocusDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
