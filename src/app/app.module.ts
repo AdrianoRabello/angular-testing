@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { SearchMusicComponent } from './search-music/search-music.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TrackItemComponent } from './track-item/track-item.component';
@@ -21,6 +21,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { HoverFocusDirective } from './directives/hover-focus.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { FormComponent } from './form/form.component';
+import { SearchService } from './services/search/search.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { FormComponent } from './form/form.component';
     DirectivesComponent,
     HoverFocusDirective,
     HighlightDirective,
-    FormComponent
+    FormComponent,
+    HomeComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -46,10 +50,11 @@ import { FormComponent } from './form/form.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule
     
   ],
-  providers: [UserService, AuthService],
+  providers: [UserService, AuthService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

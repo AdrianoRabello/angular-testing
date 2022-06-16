@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { UsingPipeComponent } from './using-pipe/using-pipe.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {path: 'teste', component: AppComponent},
@@ -14,7 +15,8 @@ export const routes: Routes = [
   {path: 'input-output', component: InputOutputComponent},
   {path: 'directives', component: DirectivesComponent},
   {path: 'form', component: FormComponent},
-  {path: '', component: AppComponent}
+  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo:'home',pathMatch: 'full'}
 ];
 
 @NgModule({
