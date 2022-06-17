@@ -1,0 +1,21 @@
+
+
+<div class="card" *ngFor="let joke of jokes">
+
+    <div style="margin-top:20px ;">
+        <mat-card class="example-card">
+            <mat-card-content>
+                <h2>{{ joke?.setUp }}</h2>
+                <h3>{{ joke?.puchline }}</h3>
+
+                <div class="flex-reverse">
+                    <button mat-raised-button color="warn" (click)="removeJoke(joke)" class="btn"> Remove </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+   
+  
+
+</div>

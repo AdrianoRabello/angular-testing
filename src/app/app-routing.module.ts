@@ -7,6 +7,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { UsingPipeComponent } from './using-pipe/using-pipe.component';
 import { HomeComponent } from './home/home.component';
+import { JokeFormComponent } from './joke/joke-form/joke-form.component';
+import { JokePageComponent } from './joke/joke-page/joke-page.component';
 
 export const routes: Routes = [
   {path: 'teste', component: AppComponent},
@@ -16,6 +18,7 @@ export const routes: Routes = [
   {path: 'directives', component: DirectivesComponent},
   {path: 'form', component: FormComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'joke', component: JokePageComponent},
   {path: '', redirectTo:'home',pathMatch: 'full'}
 ];
 

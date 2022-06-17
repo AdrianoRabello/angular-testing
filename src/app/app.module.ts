@@ -23,6 +23,10 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { FormComponent } from './form/form.component';
 import { SearchService } from './services/search/search.service';
 import { HomeComponent } from './home/home.component';
+import { JokeFormComponent } from './joke/joke-form/joke-form.component';
+import { JokeListComponent } from './joke/joke-list/joke-list.component';
+import { JokePageComponent } from './joke/joke-page/joke-page.component';
+import { JokeComponent } from './joke/joke/joke.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { HomeComponent } from './home/home.component';
     HighlightDirective,
     FormComponent,
     HomeComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    JokeFormComponent,
+    JokeListComponent,
+    JokePageComponent,
+    JokeComponent
   ],
   imports: [
     BrowserModule,

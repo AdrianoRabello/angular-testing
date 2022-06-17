@@ -1,0 +1,22 @@
+
+
+<app-joke-form (newJokeEvent)="addJoke($event)"></app-joke-form>
+
+
+<!-- <div class="card" *ngFor="let joke of jokes">
+    <h2>{{ joke.setUp }}</h2>
+    <h2>{{ joke.puchline }}</h2>
+</div> -->
+
+<!-- <app-joke-list [jokes]="jokes"></app-joke-list> -->
+<div style="margin-top:10px;">
+    <button  mat-raised-button color="warn" (click)="destroyJokes()">Destroy</button>
+</div>
+
+
+<div >
+    <app-joke *ngFor="let joke of jokes" [joke]="joke">
+       <span class="setUp">  {{ joke.setUp }} </span>
+       <span class="puchline">  {{ joke.puchline }} </span>
+    </app-joke>
+</div>
