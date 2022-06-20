@@ -10,6 +10,7 @@ import { InputOutputComponent } from './input-output/input-output.component';
 import { UsingPipeComponent } from './using-pipe/using-pipe.component';
 import { HomeComponent } from './home/home.component';
 import { JokePageComponent } from './joke/joke-page/joke-page.component';
+import { NgnonbindbleComponent } from './ngnonbindble/ngnonbindble.component';
 
 export const routes: Routes = [
   {path: 'teste', component: AppComponent},
@@ -22,6 +23,7 @@ export const routes: Routes = [
   {path: 'joke', component: JokePageComponent},
   {path: 'switchcase', component: NgswitchExampleComponent},
   {path: 'ngstyle', component: NgstyleExampleComponent},
+  {path: 'nonbindble', component: NgnonbindbleComponent},
   {path: '', redirectTo:'home',pathMatch: 'full'}
 ];
 

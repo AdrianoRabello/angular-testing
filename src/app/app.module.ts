@@ -29,6 +29,7 @@ import { JokeListComponent } from './joke/joke-list/joke-list.component';
 import { JokeComponent } from './joke/joke/joke.component';
 import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
 import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
+import { NgnonbindbleComponent } from './ngnonbindble/ngnonbindble.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.compo
     JokeListComponent,
     JokePageComponent,
     NgswitchExampleComponent,
-    NgstyleExampleComponent
+    NgstyleExampleComponent,
+    NgnonbindbleComponent
 
   ],
   imports: [
