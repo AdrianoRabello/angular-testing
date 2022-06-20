@@ -1,0 +1,12 @@
+
+
+.success{
+    border: 1px solid gray;
+    color: green;
+}
+
+
+.danger{
+    border: 1px solid gray;
+    color: red;
+}

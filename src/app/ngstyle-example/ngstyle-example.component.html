@@ -1,0 +1,27 @@
+
+<h5>The result can be taken from method inside component </h5>
+
+
+<ul *ngFor="let person of people">
+    <li [ngStyle]=" {'background-color': person.age > 18 ? 'yellow' : 'green'} ">Name: {{person.name}} age: {{person.age}} </li>
+    <li [ngStyle]=" {'background-color':getCssColor(person)} ">Name: {{person.name}} age: {{person.age}} </li>
+</ul>
+
+
+
+<h5>More than one properties </h5>
+<ul *ngFor="let person of people">
+    <li [ngStyle]=" {'color':getCssColor(person) ,'font-size.px': '30'}"  >Name: {{person.name}} age: {{person.age}} </li>
+</ul>
+
+
+<h3>With ngclass, we use for conditions to apply css properties   </h3>
+<ul *ngFor="let person of people">
+    <li [ngClass]=" {'success':true}" >Name: {{person.name}} age: {{person.age}} </li>
+</ul>
+
+<h3>With class   </h3>
+<ul *ngFor="let person of people">
+    <li [class]=" 'success' " >Name: {{person.name}} age: {{person.age}} </li>
+    <li [class.danger]=" person.age > 21 " >Name: {{person.name}} age: {{person.age}} </li>
+</ul>

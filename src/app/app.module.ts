@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +28,7 @@ import { JokePageComponent } from './joke/joke-page/joke-page.component';
 import { JokeListComponent } from './joke/joke-list/joke-list.component';
 import { JokeComponent } from './joke/joke/joke.component';
 import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
+import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.co
     JokeListComponent,
     JokePageComponent,
     NgswitchExampleComponent,
+    NgstyleExampleComponent
 
   ],
   imports: [

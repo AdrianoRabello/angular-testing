@@ -1,3 +1,4 @@
+import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
 import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
 import { FormComponent } from './form/form.component';
 import { DirectivesComponent } from './directives/directives.component';
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'joke', component: JokePageComponent},
   {path: 'switchcase', component: NgswitchExampleComponent},
+  {path: 'ngstyle', component: NgstyleExampleComponent},
   {path: '', redirectTo:'home',pathMatch: 'full'}
 ];
 
