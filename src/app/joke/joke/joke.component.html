@@ -2,8 +2,19 @@
   <h4 class="card-title">
     <ng-content select=".setup"></ng-content>
   </h4>
+
+  <div appDisplayblock>
+
+    show
+
+    <h5  [style.display]="'none'" id="card-text">Hidden</h5>
+
+  </div>
+
+
+  
   <p class="card-text"
-     >
+     [style.display]="'none'">
     <ng-content select=".punchline"></ng-content>
   </p>
   <button  mat-raised-button color="primary"

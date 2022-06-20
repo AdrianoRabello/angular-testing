@@ -1,3 +1,4 @@
+import { DirectivesPageComponent } from './directives/directives-page/directives-page.component';
 import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
 import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
 import { FormComponent } from './form/form.component';
@@ -17,7 +18,7 @@ export const routes: Routes = [
   {path: 'create-user', component: CreateUserComponent},
   {path: 'pipe', component: UsingPipeComponent},
   {path: 'input-output', component: InputOutputComponent},
-  {path: 'directives', component: DirectivesComponent},
+  {path: 'directives', component: DirectivesPageComponent},
   {path: 'form', component: FormComponent},
   {path: 'home', component: HomeComponent},
   {path: 'joke', component: JokePageComponent},

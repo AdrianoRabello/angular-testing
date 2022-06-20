@@ -30,6 +30,9 @@ import { JokeComponent } from './joke/joke/joke.component';
 import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
 import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
 import { NgnonbindbleComponent } from './ngnonbindble/ngnonbindble.component';
+import { DirectivesPageComponent } from './directives/directives-page/directives-page.component';
+import { BackgroundDirective } from './directives/background.directive';
+import { DisplayblockDirective } from './directives/displayblock.directive';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,12 @@ import { NgnonbindbleComponent } from './ngnonbindble/ngnonbindble.component';
     JokePageComponent,
     NgswitchExampleComponent,
     NgstyleExampleComponent,
-    NgnonbindbleComponent
+    NgnonbindbleComponent,
+    DirectivesPageComponent,
+    BackgroundDirective,
+    DirectivesPageComponent,
+    BackgroundDirective,
+    DisplayblockDirective
 
   ],
   imports: [
