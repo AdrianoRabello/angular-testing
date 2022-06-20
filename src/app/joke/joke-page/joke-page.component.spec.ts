@@ -1,4 +1,7 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from 'src/app/angular-material.module';
 
 import { JokePageComponent } from './joke-page.component';
 
@@ -8,7 +11,9 @@ describe('JokePageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JokePageComponent ]
+      declarations: [ JokePageComponent ],
+      imports:[ReactiveFormsModule,FormsModule,AngularMaterialModule],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

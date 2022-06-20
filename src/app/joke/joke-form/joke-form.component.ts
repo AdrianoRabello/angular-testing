@@ -1,12 +1,8 @@
 import { FormBuilder } from '@angular/forms';
-import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Joke } from 'src/app/models/joke';
 
 
-export class Joke{
-  setUp:string;
-  puchline:string;
-
-}
 
 @Component({
   selector: 'app-joke-form',
@@ -25,8 +21,8 @@ export class JokeFormComponent implements OnInit {
   ngOnInit() {
 
     this.form = this._formBuilder.group({
-      setUp : this._formBuilder.control('',[]),
-      puchline : this._formBuilder.control('',[]),
+      setup : this._formBuilder.control('',[]),
+      punchline : this._formBuilder.control('',[]),
     })
   }
 

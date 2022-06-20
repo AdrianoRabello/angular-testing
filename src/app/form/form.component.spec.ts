@@ -4,10 +4,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormComponent } from './form.component';
 import { AngularMaterialModule } from '../angular-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-fdescribe('FormComponent', () => {
+describe('FormComponent', () => {
   let component: FormComponent;
   let fixture: ComponentFixture<FormComponent>;
   let elEmail:DebugElement;
@@ -16,7 +16,8 @@ fdescribe('FormComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ FormComponent ],
-      imports:[ ReactiveFormsModule, FormsModule, AngularMaterialModule, BrowserAnimationsModule ]
+      imports:[ ReactiveFormsModule, FormsModule, AngularMaterialModule, BrowserAnimationsModule ],
+      schemas:[NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA]
     })
     fixture = TestBed.createComponent(FormComponent);
     component = fixture.componentInstance;

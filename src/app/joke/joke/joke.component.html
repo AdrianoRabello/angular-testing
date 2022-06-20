@@ -1,22 +1,12 @@
-<div style="margin-top:20px ;">
-    <mat-card class="example-card">
-        <mat-card-content>
-
-
-            <h4>
-                <ng-content select=".setUp">
-
-                </ng-content>
-            </h4>
-            <h1>
-                <ng-content select=".puchline">
-
-                </ng-content>
-            </h1>
-
-            <div>
-                <button mat-raised-button color="primary" (click)="toogleData()" class="btn"> Tell me </button>
-            </div>
-        </mat-card-content>
-    </mat-card>
+<div class="card card-block">
+  <h4 class="card-title">
+    <ng-content select=".setup"></ng-content>
+  </h4>
+  <p class="card-text"
+     >
+    <ng-content select=".punchline"></ng-content>
+  </p>
+  <button  mat-raised-button color="primary"
+     (click)="data.toggle()">Tell Me
+  </button>
 </div>

@@ -1,3 +1,5 @@
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user-service/user.service';
@@ -18,8 +20,8 @@ export class CreateUserComponent implements OnInit {
   constructor(private _userService:UserService, private _formBuilder:FormBuilder) {
 
     this.userForm = this._formBuilder.group({
-      name:this._formBuilder.control('', []),
-      email: this._formBuilder.control('', [])
+      name:this._formBuilder.control('', [Validators.required]),
+      email: this._formBuilder.control('', [Validators.required])
     })
    }
 
@@ -33,9 +35,12 @@ export class CreateUserComponent implements OnInit {
 
 
   addUser(){
-    console.log("values ", this.userForm.value)
 
-    this._userService.addUser(this.userForm.value);
+    if(this.userForm.valid){
+      console.log("values ", this.userForm.value)
+      this._userService.addUser(this.userForm.value);
+    }
+  
   }
 
 

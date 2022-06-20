@@ -1,7 +1,7 @@
 import { Validators } from '@angular/forms';
 import { User } from './../models/user';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DebugElement, Component } from '@angular/core';
+import { DebugElement, Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By} from '@angular/platform-browser';
 import { AngularMaterialModule } from '../angular-material.module';
@@ -30,7 +30,8 @@ describe('InputOutputComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations:  [InputOutputComponent],
-      imports:[AngularMaterialModule,BrowserAnimationsModule]
+      imports:[AngularMaterialModule,BrowserAnimationsModule],
+      schemas:[NO_ERRORS_SCHEMA]
     })
 
     fixture = TestBed.createComponent(InputOutputComponent);

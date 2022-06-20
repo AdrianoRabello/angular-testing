@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SearchMusicComponent } from './search-music/search-music.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TrackItemComponent } from './track-item/track-item.component';
@@ -24,9 +24,10 @@ import { FormComponent } from './form/form.component';
 import { SearchService } from './services/search/search.service';
 import { HomeComponent } from './home/home.component';
 import { JokeFormComponent } from './joke/joke-form/joke-form.component';
-import { JokeListComponent } from './joke/joke-list/joke-list.component';
 import { JokePageComponent } from './joke/joke-page/joke-page.component';
+import { JokeListComponent } from './joke/joke-list/joke-list.component';
 import { JokeComponent } from './joke/joke/joke.component';
+import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
 
 @NgModule({
   declarations: [
@@ -46,10 +47,12 @@ import { JokeComponent } from './joke/joke/joke.component';
     FormComponent,
     HomeComponent,
     CreateUserComponent,
+    JokeComponent,
     JokeFormComponent,
     JokeListComponent,
     JokePageComponent,
-    JokeComponent
+    NgswitchExampleComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { JokeComponent } from './joke/joke/joke.component';
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-    HttpClientModule
+    HttpClientModule,
     
   ],
   providers: [UserService, AuthService, SearchService],

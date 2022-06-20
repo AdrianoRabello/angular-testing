@@ -1,3 +1,5 @@
+import { JokeFormComponent } from './joke/joke-form/joke-form.component';
+import { JokePageComponent } from './joke/joke-page/joke-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsingPipeComponent } from './using-pipe/using-pipe.component';
 import { Location } from "@angular/common";
@@ -20,9 +22,12 @@ import { FormComponent } from './form/form.component';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { OverrideInjectsComponent } from './override-injects/override-injects.component';
 import { AngularMaterialModule } from './angular-material.module';
+import { JokeListComponent } from './joke/joke-list/joke-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
-fdescribe('Router: app',()=> {
+describe('Router: app',()=> {
 
     let location:Location;
     let router:Router;
@@ -31,7 +36,7 @@ fdescribe('Router: app',()=> {
     beforeEach(() => {
 
         TestBed.configureTestingModule({
-            imports: [RouterTestingModule.withRoutes(routes), AngularMaterialModule, FormsModule,ReactiveFormsModule],
+            imports: [RouterTestingModule.withRoutes(routes), AngularMaterialModule, FormsModule,ReactiveFormsModule,BrowserAnimationsModule],
             declarations: [AppComponent,  
                 SearchMusicComponent,
                 TrackItemComponent,
@@ -45,9 +50,14 @@ fdescribe('Router: app',()=> {
                 DirectivesComponent,
                 HoverFocusDirective,
                 HighlightDirective,
+                JokePageComponent,
+                JokeListComponent,
+                JokeFormComponent,
+                JokePageComponent,
                 FormComponent,
                 HomeComponent,
-                CreateUserComponent]
+                CreateUserComponent],
+                schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
         })
 
         router      = TestBed.get(Router);
@@ -67,6 +77,12 @@ fdescribe('Router: app',()=> {
         router.navigate(['form']);
         tick();
         expect(location.path()).toBe('/form')
+    }))
+
+    it('it should navigate to create-user path',fakeAsync(()=> {
+        router.navigate(['create-user']);
+        tick();
+        expect(location.path()).toBe('/create-user');
     }))
 
 })

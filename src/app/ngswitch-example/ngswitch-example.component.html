@@ -1,0 +1,6 @@
+
+
+<ul *ngFor="let person of people" [ngSwitch]="person.age">
+    <li *ngSwitchCase="10" class="primary" > {{person.name }} here is what i want </li>
+    <li *ngSwitchDefault class="primary" > {{person.name }}</li>
+</ul>
