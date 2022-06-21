@@ -1,3 +1,4 @@
+import { Joke } from 'src/app/models/joke';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesPageComponent implements OnInit {
 
+  data =   new Joke("What did the cheese say when it looked in the mirror?", "Hello-me (Halloumi)");
   constructor() { }
 
   ngOnInit() {

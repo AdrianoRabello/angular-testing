@@ -33,6 +33,7 @@ import { NgnonbindbleComponent } from './ngnonbindble/ngnonbindble.component';
 import { DirectivesPageComponent } from './directives/directives-page/directives-page.component';
 import { BackgroundDirective } from './directives/background.directive';
 import { DisplayblockDirective } from './directives/displayblock.directive';
+import { CardHoverDirective } from './directives/card-hover.directive';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { DisplayblockDirective } from './directives/displayblock.directive';
     BackgroundDirective,
     DirectivesPageComponent,
     BackgroundDirective,
-    DisplayblockDirective
+    DisplayblockDirective,
+    CardHoverDirective
 
   ],
   imports: [

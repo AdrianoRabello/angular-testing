@@ -2,3 +2,13 @@
 
 
 <h1 appBackground>appBackground</h1>
+
+
+
+<h5>We can pass query selector properties fordirectives like this below example </h5>
+<div class="card card-block"  [ccCardHover]="{querySelector:'p'}">
+  <h4 class="card-title">{{data.setup}}</h4>
+  <p class="card-text"
+     [style.display]="'none'">{{data.punchline}}</p>
+
+</div>
