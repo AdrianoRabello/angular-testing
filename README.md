@@ -1,4 +1,7 @@
-# ButtonClickTest
+
+# By Adriano Rabello Testing Project 
+
+## I created this project to study more about tests using Angular with Jesmie and Karma. I really think that we just learn when we put our hands on code and try to do something.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
@@ -18,7 +21,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Runin tests with coverage
+## Running tests with coverage
 
 Run `ng test --code-coverage` and angular cli will create a folder inside the root directory and there you can access the index html to see the coverage ranger.
 
