@@ -1,3 +1,4 @@
+import { ObservableComponent } from './observable/observable.component';
 import { DirectivesPageComponent } from './directives/directives-page/directives-page.component';
 import { NgstyleExampleComponent } from './ngstyle-example/ngstyle-example.component';
 import { NgswitchExampleComponent } from './ngswitch-example/ngswitch-example.component';
@@ -25,6 +26,7 @@ export const routes: Routes = [
   {path: 'switchcase', component: NgswitchExampleComponent},
   {path: 'ngstyle', component: NgstyleExampleComponent},
   {path: 'nonbindble', component: NgnonbindbleComponent},
+  {path: 'observable', component: ObservableComponent},
   {path: '', redirectTo:'home',pathMatch: 'full'}
 ];
 

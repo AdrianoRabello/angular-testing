@@ -34,6 +34,7 @@ import { DirectivesPageComponent } from './directives/directives-page/directives
 import { BackgroundDirective } from './directives/background.directive';
 import { DisplayblockDirective } from './directives/displayblock.directive';
 import { CardHoverDirective } from './directives/card-hover.directive';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     DirectivesPageComponent,
     BackgroundDirective,
     DisplayblockDirective,
-    CardHoverDirective
+    CardHoverDirective,
+    ObservableComponent
 
   ],
   imports: [
