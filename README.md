@@ -1,7 +1,7 @@
 
 # By Adriano Rabello Testing Project 
 
-## I created this project to study more about tests using Angular with Jesmie and Karma. I really think that we just learn when we put our hands on code and try to do something.
+ I created this project to study more about tests using Angular with Jesmie and Karma. I really think that we just learn when we put our hands on code and try to do something.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
