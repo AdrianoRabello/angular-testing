@@ -2,6 +2,7 @@ import { Person } from './../../models/person';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { User } from 'src/app/create-user/user';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,9 @@ export class UserService {
 
   getPeopleForTest():Observable<Person[]>{
 
-    return of(this.people);
+    return of(this.people).pipe(
+      
+    );
   }
   addUser(user: User): void {
     this.usersArray.push(user);

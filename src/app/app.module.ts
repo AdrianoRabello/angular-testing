@@ -35,6 +35,7 @@ import { BackgroundDirective } from './directives/background.directive';
 import { DisplayblockDirective } from './directives/displayblock.directive';
 import { CardHoverDirective } from './directives/card-hover.directive';
 import { ObservableComponent } from './observable/observable.component';
+import { PostsService } from './services/posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,7 @@ import { ObservableComponent } from './observable/observable.component';
     HttpClientModule,
     
   ],
-  providers: [UserService, AuthService, SearchService],
+  providers: [UserService, AuthService, SearchService,PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
