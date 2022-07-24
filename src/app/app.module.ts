@@ -36,6 +36,7 @@ import { DisplayblockDirective } from './directives/displayblock.directive';
 import { CardHoverDirective } from './directives/card-hover.directive';
 import { ObservableComponent } from './observable/observable.component';
 import { PostsService } from './services/posts/posts.service';
+import { NavigateComponent } from './navigate/navigate.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { PostsService } from './services/posts/posts.service';
     BackgroundDirective,
     DisplayblockDirective,
     CardHoverDirective,
-    ObservableComponent
+    ObservableComponent,
+    NavigateComponent
 
   ],
   imports: [
